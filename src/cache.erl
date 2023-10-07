@@ -30,7 +30,6 @@ start_link() ->
 %%% gen_server callbacks
 %%%===================================================================
 
-
 insert(Key, Value) ->
     gen_server:call(?MODULE, {insert, Key, Value}).
 
@@ -43,11 +42,6 @@ lookup(Key) ->
 init([]) ->
     ets:new(?MODULE, [public, named_table]),
     {ok, #work_state{cache=[]}}.
-
-%%%===================================================================
-
-%%%===================================================================
-
 
 handle_call({insert, Key, Value}, _From, State = #work_state{}) ->
     UnixTime = calendar:datetime_to_gregorian_seconds(calendar:universal_time()),
@@ -71,23 +65,6 @@ handle_call({lookup,Key}, _From, State) ->
                     {reply, Value, State}
             end
     end.
-
-%handle_call({lookup, _Date_From, _Date_To}, _From, State) ->
-%       case ets:info(?MODULE) of
-%       undefined ->
-%           {reply, undefined, State};
-%       _ ->
-%           case ets:lookup(?MODULE, _Date_F, _Date_T) of
-%               [] ->
-%                   {reply, undefined, State};
-%               [{_, Value}] ->
-%                   {reply, Value, State}
-%           end
-%   end.
-%================================================================
-%                               {<<"2015/1/1 00:00:00">>,
-%                               <<"2015/1/10 23:59:59">>}
-%================================================================
 
 handle_cast(_Request, State = #work_state{}) ->
     {noreply, State}.
