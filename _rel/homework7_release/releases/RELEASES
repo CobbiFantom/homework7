@@ -1,0 +1,17 @@
+%% coding: utf-8
+[{release,"homework7_release","1","12.2.1",
+          [{kernel,"8.2","./lib/kernel-8.2"},
+           {stdlib,"3.17","./lib/stdlib-3.17"},
+           {crypto,"5.0.5","./lib/crypto-5.0.5"},
+           {cowlib,"2.9.1","./lib/cowlib-2.9.1"},
+           {asn1,"5.0.17","./lib/asn1-5.0.17"},
+           {public_key,"1.11.3","./lib/public_key-1.11.3"},
+           {ssl,"10.6.1","./lib/ssl-10.6.1"},
+           {ranch,"1.7.1","./lib/ranch-1.7.1"},
+           {cowboy,"2.8.0","./lib/cowboy-2.8.0"},
+           {jsone,"1.8.1","./lib/jsone-1.8.1"},
+           {jsx,"3.1.0","./lib/jsx-3.1.0"},
+           {homework7,"0.1.0","./lib/homework7-0.1.0"},
+           {sasl,"4.1.1","./lib/sasl-4.1.1"},
+           {runtime_tools,"1.17","./lib/runtime_tools-1.17"}],
+          permanent}].
