@@ -43,17 +43,3 @@ action({<<"lookup_by_date">>, _Json}, Req0) ->
  %  Date_To = map_get(<<"date_to">>, Json),
     Value = <<"No_finished">>,
     answer(Value, Req0).
- %   cowboy_req:reply(200, #{
- %       << "content-type" >>  =>  << "text/plain" >>
- %   }, jsone:encode(#{Date_From => Date_To}), Req0).
-
-
-
-
-%============================================================
-%cowboy
-%============================================================
-
-% curl -H "Content-Type: application/json" -X POST -d '{"action":"insert","key":"some_key", "value":[1,2,3]}' http://localhost:8080/api/cache_server
-
-%============================================================
